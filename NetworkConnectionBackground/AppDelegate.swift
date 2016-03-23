@@ -15,8 +15,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        let urlAsString = "http://www.apple.com"
+        let url = NSURL(string: urlAsString)!
+        let urlRequest = NSURLRequest(URL: url)
+        let queue = NSOperationQueue()
+        
+        NSURLConnection.sendAsynchronousRequest(urlRequest, queue: queue) { (response, data, error) -> Void in
+            
+            if data.length > 0 && error == nil {
+                
+                
+                
+            } else if data.length == 0 && error == nil {
+                
+                
+                
+            } else if error != nil {
+                
+                
+                
+            }
+            
+        }
+        
         return true
+        
     }
 
     func applicationWillResignActive(application: UIApplication) {
